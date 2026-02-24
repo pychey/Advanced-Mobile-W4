@@ -1,3 +1,4 @@
+import 'package:advanced_flutter/W4-Lab-Observer-Pattern/2_download_app/ui/screens/downloads/widgets/download_tile.dart';
 import 'package:flutter/material.dart';
 import '../../providers/theme_color_provider.dart';
 import '../../theme/theme.dart';
@@ -41,6 +42,12 @@ class DownloadsScreen extends StatelessWidget {
             SizedBox(height: 50),
       
             // TODO - Add the Download tiles
+            ListView(
+              shrinkWrap: true,
+              children: controllers
+                  .map((controller) => DownloadTile(controller: controller))
+                  .toList(),
+            ),
           ],
         ),
       ),
